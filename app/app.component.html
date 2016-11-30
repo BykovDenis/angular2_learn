@@ -1,0 +1,19 @@
+	<h1> Авторизация пользователя </h1>
+	<ul class="authForm">
+		<li class="authForm__item">
+			<label for="email">Введите имя: </label>
+			<user-email [(userEmail)]="email"></user-email>
+		</li>
+		<li class="authForm__item">
+			<label for="passw">Введите: </label>
+			<input [(ngModel)]="userPassw" placeholder="Введит пароль" id="passw">		
+		</li>
+		<li class="authForm__item">
+			<button type="button" (click)="process()"> Авторизоваться </button>
+		</li>
+	</ul>			
+<h2>Введенные данные</h2>
+<ul>
+	<li>{{email}}</li>
+	<li>{{userPassw}}</li>
+</ul>

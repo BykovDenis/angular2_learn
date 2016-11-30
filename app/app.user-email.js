@@ -9,23 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.email = '123';
-        this.userPassw = '';
+var AppUserEmail = (function () {
+    function AppUserEmail() {
+        this.userEmailChange = new core_1.EventEmitter();
     }
-    AppComponent.prototype.process = function () {
-        console.log(this.email, this.userPassw);
+    AppUserEmail.prototype.onNameChange = function (model) {
+        this.userEmail = model;
+        this.userEmailChange.emit(model);
     };
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], AppUserEmail.prototype, "userEmail", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], AppUserEmail.prototype, "userEmailChange", void 0);
+    AppUserEmail = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html',
-            styleUrls: ['app/app.component.css']
+            selector: 'user-email',
+            template: "<input [ngModel]=\"userEmail\" (ngModelChange)=\"onNameChange($event)\"  placeholder=\"userEmail\" />"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AppUserEmail);
+    return AppUserEmail;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AppUserEmail = AppUserEmail;
+//# sourceMappingURL=app.user-email.js.map

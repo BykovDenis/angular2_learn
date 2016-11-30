@@ -1,0 +1,13 @@
+.authForm{
+	list-style: none;
+	list-style-type: none;
+	width: 260px;
+}
+
+.authForm__item{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
